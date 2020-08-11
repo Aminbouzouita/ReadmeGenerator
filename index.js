@@ -1,6 +1,3 @@
-const inquirer = require("inquirer");
-const fs = require("fs");
-const axios = require("axios");
 const questions = [
     {
         type: "input",
@@ -19,37 +16,48 @@ const questions = [
     },
     {
         type: "input",
-        message: "Enter table of contents",
-        name: "tablecontent"
+        message: "Enter project installations",
+        name: "installation"
     },
     {
         type: "input",
-        message: "Enter usage purpose",
+        message: "Enter project usage",
         name: "usage"
     },
     {
         type: "input",
-        message: "Enter License name",
-        name: "licensename"
+        message: "Enter project credis",
+        name: "credits"
+    },
+    {
+        type: "input",
+        message: "Enter project License",
+        name: "license"
     },
     {
         type: "input",
         message: "Enter github contributor",
-        name: "contributor"
+        name: "contribution"
     },
     {
         type: "input",
-        message: "Enter test information",
-        name: "test"
+        message: "Enter project test",
+        name: "tests"
     },
     {
         type: "input",
-        message: "Enter questions",
-        name: "question"
+        message: "Enter project questions",
+        name: "questions"
     }
 ];
-
-function writeToFile(fileName, data) {
+function writeToFile(answers) {
+    let markdownstr = generatemarkdown(answers);
+    fs.writeFile(`README.md`, markdownstr, function (err) {
+        if (err) {
+            console.log(err); 
+            return;
+        }
+    })
 }
 function init() {
     inquirer.prompt(questions)
