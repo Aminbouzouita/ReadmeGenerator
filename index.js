@@ -61,13 +61,15 @@ function writeToFile(answers) {
 }
 function init() {
     inquirer.prompt(questions)
-        .then(function (questions) {
-            const queryUrl = `https://api.github.com/users/${questions.username}/repos?per_page=100`;
+        .then(function (answers) {
+            const queryUrl = `https://api.github.com/users/${answers.username}/events/public`;
             axios.get(queryUrl).then(function (res) {
-                console.log(res.data[1].owner.avatar_url);
-
+                answers.avatar_url = res.data[0].actor.avatar_url;
+                answers.email = res.data[0].payload.commits[0].author.email;
+                writeToFile(answers);
             });
         });
+
 };
 
 init();
