@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const axios = require("axios");
 const questions = [
     {
         type: "input",
@@ -50,7 +51,15 @@ const questions = [
 
 function writeToFile(fileName, data) {
 }
- function init() {
-}
+function init() {
+    inquirer.prompt(questions)
+        .then(function (questions) {
+            const queryUrl = `https://api.github.com/users/${questions.username}/repos?per_page=100`;
+            axios.get(queryUrl).then(function (res) {
+                console.log(res.data[1].owner.avatar_url);
+
+            });
+        });
+};
 
 init();
