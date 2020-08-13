@@ -12,10 +12,10 @@ npm intall
 ![License](https://img.shields.io/badge/License--blue)
 
 
-###demo:
-![Watch demo](index.js - ReadmeGenerator - Visual Studio Code 2020-08-12 22-53-19.mp4)
-###URL Github Repo:
-![rep-url](https://github.com/Aminbouzouita/ReadmeGenerator)
+#### demo:
+![Watch demo](demo.gif)
+#### URL Github Repo:
+[rep-url]( https://aminbouzouita.github.io/ReadmeGenerator/)
 
 
 ---
