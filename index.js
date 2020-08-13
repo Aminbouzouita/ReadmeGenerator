@@ -1,3 +1,7 @@
+const inquirer = require("inquirer");
+const fs = require("fs");
+const axios = require("axios");
+const generatemarkdown = require("./utils/generateMarkdown");
 const questions = [
     {
         type: "input",
@@ -36,12 +40,12 @@ const questions = [
     },
     {
         type: "input",
-        message: "Enter github contributor",
+        message: "Enter github contribution",
         name: "contribution"
     },
     {
         type: "input",
-        message: "Enter project test",
+        message: "Enter project tests",
         name: "tests"
     },
     {
