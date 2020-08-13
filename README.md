@@ -10,8 +10,12 @@ an application that generate readme file
 npm intall
 ## badges
 ![License](https://img.shields.io/badge/License--blue)
-## Video Demonstartion
-[![Watch demo](index.js - ReadmeGenerator - Visual Studio Code 2020-08-12 22-19-29.mp4)]
+
+
+demo:
+[![Watch demo](index.js - ReadmeGenerator - Visual Studio Code 2020-08-12 22-53-19.mp4)]
+URL Github Repo:
+![rep-url](https://github.com/Aminbouzouita/ReadmeGenerator)
 
 
 ---
